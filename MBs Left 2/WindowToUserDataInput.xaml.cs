@@ -23,10 +23,10 @@ namespace MBs_Left_2
                 {
                     return true;
                 }
-                MessageBox.Show("Incorrect phone number! Use format example: 487430123");
+                MessageBox.Show(Properties.Resources.IncorrectPhoneMessage);
                 return false;
             }
-            MessageBox.Show("Incorrect phone number! Use format example: 487430123");
+            MessageBox.Show(Properties.Resources.IncorrectPhoneMessage);
             return false;
         }
 

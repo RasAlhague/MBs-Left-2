@@ -488,7 +488,7 @@ namespace MBs_Left_2
 
                 return _trafficStatictic;
             }
-            MessageBox.Show("Wrong user login or password!");
+            MessageBox.Show(Properties.Resources.WrongUserDataMessage);
             TrafficStatictic emptyTrafficStatictic = new TrafficStatictic("0000", "0000", "0000");
 
             //Event

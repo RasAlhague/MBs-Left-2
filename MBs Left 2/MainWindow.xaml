@@ -10,7 +10,7 @@
 
     <Window.ContextMenu>
         <ContextMenu BorderThickness="0" HorizontalContentAlignment="Stretch" Padding="2,2,2,0" VerticalContentAlignment="Stretch">
-            <MenuItem x:Name="MenuItem_GetStatictic" Header="Get Statistic"/>
+            <MenuItem x:Name="MenuItem_GetStatictic" Header="{x:Static Properties:Resources.MenuItem_GetStatictic}"/>
             <Separator Margin="0"/>
             <MenuItem x:Name="MenuItem_AutoUpdate" Header="Auto Update" IsCheckable="True" IsChecked="{Binding Default.AutoUpdateEnable}">
                 <MenuItem.DataContext>
