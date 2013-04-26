@@ -9,7 +9,7 @@
       <Value Profile="(Default)">y134679258</Value>
     </Setting>
     <Setting Name="AutoUpdateInterval" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">4</Value>
+      <Value Profile="(Default)">30</Value>
     </Setting>
     <Setting Name="AutoUpdateEnable" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>

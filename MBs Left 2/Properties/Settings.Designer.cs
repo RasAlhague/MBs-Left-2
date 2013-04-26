@@ -49,7 +49,7 @@ namespace MBs_Left_2.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("4")]
+        [global::System.Configuration.DefaultSettingValueAttribute("30")]
         public int AutoUpdateInterval {
             get {
                 return ((int)(this["AutoUpdateInterval"]));
