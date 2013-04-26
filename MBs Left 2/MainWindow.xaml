@@ -26,8 +26,11 @@
             <MenuItem Header="{x:Static Properties:Resources.Settings}" Margin="0,-1">
                 <MenuItem x:Name="MenuItem_TopMost" IsCheckable="True" IsChecked="{Binding TopMost}" Header="{x:Static Properties:Resources.MenuItem_TopMost}" Margin="0,-1"/>
                 <Slider x:Name="MenuItem_OpacitySlider" Maximum="100" ValueChanged="MenuItem_OpacitySlider_ValueChanged" Value="{Binding OpacitySliderValue}" Margin="0,-1" VerticalAlignment="Center"/>
-                <Separator Margin="0"/>
                 <MenuItem x:Name="MenuItem_SetUserData" Header="{x:Static Properties:Resources.MenuItem_SetUserData}" Margin="0,-1"/>
+                <MenuItem x:Name="MenuItem_Language" Header="{x:Static Properties:Resources.MenuItem_Language}">
+                    <MenuItem x:Name="MenuItem_English" Header="English"/>
+                    <MenuItem Header="Русский"/>
+                </MenuItem>
             </MenuItem>
             <Separator Margin="0"/>
             <MenuItem x:Name="MenuItem_About" Header="{x:Static Properties:Resources.MenuItem_About}" Click="MenuItem_About_Click" Margin="0,-1"/>

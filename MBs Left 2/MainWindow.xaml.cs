@@ -124,6 +124,15 @@ namespace MBs_Left_2
                     windowToUserDataInput.Left = this.Left - (windowToUserDataInput.Width - this.Width)/2;
                     windowToUserDataInput.Show();
                 };
+            /*
+            //Language
+            MenuItem_English.Click += delegate
+                {
+                    System.Threading.Thread.CurrentThread.CurrentUICulture = 
+                        System.Globalization.CultureInfo.GetCultureInfo("en-US");
+
+                    InitializeComponent();
+                };*/
         }
 
         private void InitializeUserTrafficStatistic(string userPhone, string userPass)

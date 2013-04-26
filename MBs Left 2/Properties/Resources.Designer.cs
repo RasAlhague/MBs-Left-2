@@ -115,6 +115,15 @@ namespace MBs_Left_2.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Set Language.
+        /// </summary>
+        public static string MenuItem_Language {
+            get {
+                return ResourceManager.GetString("MenuItem_Language", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Set User Data.
         /// </summary>
         public static string MenuItem_SetUserData {

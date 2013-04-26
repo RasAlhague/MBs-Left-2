@@ -135,6 +135,9 @@
   <data name="MenuItem_GetStatictic" xml:space="preserve">
     <value>Загрузить статистику</value>
   </data>
+  <data name="MenuItem_Language" xml:space="preserve">
+    <value>Выбрать язык интерфейса</value>
+  </data>
   <data name="MenuItem_SetUserData" xml:space="preserve">
     <value>Задать номер телефона и пароль</value>
   </data>
