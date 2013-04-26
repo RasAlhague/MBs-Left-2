@@ -79,7 +79,7 @@ namespace MBs_Left_2.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to About.
         /// </summary>
         public static string MenuItem_About {
             get {
@@ -88,7 +88,7 @@ namespace MBs_Left_2.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Auto Update.
         /// </summary>
         public static string MenuItem_AutoUpdate {
             get {
@@ -97,16 +97,7 @@ namespace MBs_Left_2.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
-        /// </summary>
-        public static string MenuItem_AutoUpdateTime {
-            get {
-                return ResourceManager.GetString("MenuItem_AutoUpdateTime", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Exit.
         /// </summary>
         public static string MenuItem_Exit {
             get {
@@ -124,16 +115,7 @@ namespace MBs_Left_2.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
-        /// </summary>
-        public static string MenuItem_OpacitySlider {
-            get {
-                return ResourceManager.GetString("MenuItem_OpacitySlider", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Set User Data.
         /// </summary>
         public static string MenuItem_SetUserData {
             get {
@@ -142,7 +124,7 @@ namespace MBs_Left_2.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Top Most.
         /// </summary>
         public static string MenuItem_TopMost {
             get {
@@ -151,7 +133,7 @@ namespace MBs_Left_2.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Settings.
         /// </summary>
         public static string Settings {
             get {

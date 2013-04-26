@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Deployment.Application;
 using System.Globalization;
+using System.IO;
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Net.Http;
@@ -327,10 +328,10 @@ namespace MBs_Left_2
 
         private async void GetAndSetStatisticToLabels()
         {
-            bool inetconectionEnabled = ConnectionChecker.IsConnectedToInternet();
+            bool inetConectionEnabled = ConnectionChecker.IsConnectedToInternet();
             //bool inetconectionEnabled = CheckInetConection();
 
-            if (inetconectionEnabled)
+            if (inetConectionEnabled)
             {
                 TrafficStatictic trafficStatictic = await userTrafficStatistic.GetPageContentAsync();
 
@@ -341,7 +342,7 @@ namespace MBs_Left_2
             }
             else
             {
-                MessageBox.Show("Check you Internet connection!");
+                MessageBox.Show(Properties.Resources.CheckInternetConnectionMessage);
             }
 
             //Dont work work WPF - thread unsafe
@@ -503,21 +504,25 @@ namespace MBs_Left_2
             Match parsMatchTotalTraffic = Regex.Match(stringToParse, @"(?<AllT>\d*)\.?\d* по \d\d");
             if (!parsMatchTotalTraffic.Success)
             {
-                MessageBox.Show(@"Can not find TotalTraffic");
+                MessageBox.Show("DEBUG.\n\nCan not find TotalTraffic");
+
+                string debugString = "DEBUG.\n\nCan not find TotalTraffic" + "\nin" + stringToParse;
+                string filePath = @AppDomain.CurrentDomain.BaseDirectory + @"log-" + DateTime.Now.Second + @".txt";
+                File.WriteAllText(filePath, debugString);
             }
 
             // нахожу на странице поле трафика текущей сессии и достаю значение через группу
             Match parsMatchCurrentSession = Regex.Match(stringToParse, @"<td>Трафик МБ</td>.*?(?<currSessionT>\d{1,4})<+?");
             if (!parsMatchCurrentSession.Success)
             {
-                MessageBox.Show(@"Can not find CurrentSession");
+                MessageBox.Show("DEBUG.\n\nCan not find CurrentSession");
             }
 
             //нахожу на странице поле сальдо и достаю значение через группу
             Match parsMatchSaldo = Regex.Match(stringToParse, @"<td>Сальдо</td>.*(?<Saldo>\d{1,2}.\d{1,2}).*месяц");
             if (!parsMatchSaldo.Success)
             {
-                MessageBox.Show(@"Can not find Saldo");
+                MessageBox.Show("DEBUG.\n\nCan not find Saldo");
             }
 
             //заполняю структуру статистики

@@ -124,31 +124,25 @@
     <value>Incorrect phone number! Use format example: 487430123</value>
   </data>
   <data name="MenuItem_About" xml:space="preserve">
-    <value />
+    <value>About</value>
   </data>
   <data name="MenuItem_AutoUpdate" xml:space="preserve">
-    <value />
-  </data>
-  <data name="MenuItem_AutoUpdateTime" xml:space="preserve">
-    <value />
+    <value>Auto Update</value>
   </data>
   <data name="MenuItem_Exit" xml:space="preserve">
-    <value />
+    <value>Exit</value>
   </data>
   <data name="MenuItem_GetStatictic" xml:space="preserve">
     <value>Get Statictic</value>
   </data>
-  <data name="MenuItem_OpacitySlider" xml:space="preserve">
-    <value />
-  </data>
   <data name="MenuItem_SetUserData" xml:space="preserve">
-    <value />
+    <value>Set User Data</value>
   </data>
   <data name="MenuItem_TopMost" xml:space="preserve">
-    <value />
+    <value>Top Most</value>
   </data>
   <data name="Settings" xml:space="preserve">
-    <value />
+    <value>Settings</value>
   </data>
   <data name="WrongUserDataMessage" xml:space="preserve">
     <value>Wrong user login or password!</value>

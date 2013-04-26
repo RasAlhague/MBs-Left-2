@@ -12,7 +12,7 @@
         <ContextMenu BorderThickness="0" HorizontalContentAlignment="Stretch" Padding="2,2,2,0" VerticalContentAlignment="Stretch">
             <MenuItem x:Name="MenuItem_GetStatictic" Header="{x:Static Properties:Resources.MenuItem_GetStatictic}"/>
             <Separator Margin="0"/>
-            <MenuItem x:Name="MenuItem_AutoUpdate" Header="Auto Update" IsCheckable="True" IsChecked="{Binding Default.AutoUpdateEnable}">
+            <MenuItem x:Name="MenuItem_AutoUpdate" Header="{x:Static Properties:Resources.MenuItem_AutoUpdate}" IsCheckable="True" IsChecked="{Binding Default.AutoUpdateEnable}">
                 <MenuItem.DataContext>
                     <Properties:Settings/>
                 </MenuItem.DataContext>
@@ -23,16 +23,16 @@
                 </TextBox.DataContext>
             </TextBox>
             <Separator Margin="0"/>
-            <MenuItem Header="Settings" Margin="0,-1">
-                <MenuItem x:Name="MenuItem_TopMost" IsCheckable="True" IsChecked="{Binding TopMost}" Header="Top Most" Margin="0,-1"/>
+            <MenuItem Header="{x:Static Properties:Resources.Settings}" Margin="0,-1">
+                <MenuItem x:Name="MenuItem_TopMost" IsCheckable="True" IsChecked="{Binding TopMost}" Header="{x:Static Properties:Resources.MenuItem_TopMost}" Margin="0,-1"/>
                 <Slider x:Name="MenuItem_OpacitySlider" Maximum="100" ValueChanged="MenuItem_OpacitySlider_ValueChanged" Value="{Binding OpacitySliderValue}" Margin="0,-1" VerticalAlignment="Center"/>
                 <Separator Margin="0"/>
-                <MenuItem x:Name="MenuItem_SetUserData" Header="Set user data" Margin="0,-1"/>
+                <MenuItem x:Name="MenuItem_SetUserData" Header="{x:Static Properties:Resources.MenuItem_SetUserData}" Margin="0,-1"/>
             </MenuItem>
             <Separator Margin="0"/>
-            <MenuItem x:Name="MenuItem_About" Header="About" Click="MenuItem_About_Click" Margin="0,-1"/>
+            <MenuItem x:Name="MenuItem_About" Header="{x:Static Properties:Resources.MenuItem_About}" Click="MenuItem_About_Click" Margin="0,-1"/>
             <Separator Margin="0"/>
-            <MenuItem x:Name="MenuItem_Exit" Header="Exit" Margin="0,-1"/>
+            <MenuItem x:Name="MenuItem_Exit" Header="{x:Static Properties:Resources.MenuItem_Exit}" Margin="0,-1"/>
         </ContextMenu>
     </Window.ContextMenu>
     <Grid>
