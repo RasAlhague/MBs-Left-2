@@ -19,10 +19,10 @@ namespace MBs_Left_2
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow
     {
         private readonly TimerEx _timerEx = new TimerEx();
-        private UserTrafficStatistic userTrafficStatistic;
+        private UserTrafficStatistic _userTrafficStatistic;
 
         private const int SecondsInMinute = 60;
 
@@ -42,7 +42,7 @@ namespace MBs_Left_2
                 {
                     if (args.PropertyName == "UserPhoneNamber")
                     {
-                        userTrafficStatistic.SetUserData(Properties.Settings.Default.UserPhoneNamber, Properties.Settings.Default.UserPass);
+                        _userTrafficStatistic.SetUserData(Properties.Settings.Default.UserPhoneNamber, Properties.Settings.Default.UserPass);
                     }
                 };
         }
@@ -101,10 +101,6 @@ namespace MBs_Left_2
                             _timerEx.Start();
                         }
                     }
-                    else
-                    {
-                        //MessageBox.Show("Incorrect field");
-                    }
                 };
 
             MenuItem_TopMost.Checked += delegate
@@ -137,12 +133,12 @@ namespace MBs_Left_2
 
         private void InitializeUserTrafficStatistic(string userPhone, string userPass)
         {
-            userTrafficStatistic = new UserTrafficStatistic(userPhone, userPass);
+            _userTrafficStatistic = new UserTrafficStatistic(userPhone, userPass);
         }
 
         private void InitializeMainBehavior()
         {
-            userTrafficStatistic.StatisticLoaded += delegate
+            _userTrafficStatistic.StatisticLoaded += delegate
             {
                 ClearLabels();
 
@@ -155,7 +151,7 @@ namespace MBs_Left_2
                 });
             };
 
-            userTrafficStatistic.StatisticLoadingStart += delegate
+            _userTrafficStatistic.StatisticLoadingStart += delegate
             {
                 _timerEx.Stop();
             };
@@ -168,7 +164,7 @@ namespace MBs_Left_2
 
         private void InitializeProgressBarBehavior(ProgressBar progressBar)
         {
-            userTrafficStatistic.StatisticLoadingStart += delegate
+            _userTrafficStatistic.StatisticLoadingStart += delegate
             {
                 SetProgressBarStyleToMarquee(progressBar);
                 //if (!progressBar.Dispatcher.CheckAccess())
@@ -182,7 +178,7 @@ namespace MBs_Left_2
                 //}
             };
 
-            userTrafficStatistic.StatisticLoaded += delegate
+            _userTrafficStatistic.StatisticLoaded += delegate
             {
                 SetProgressBarStyleToBlock(progressBar);
                 //if (!progressBar.Dispatcher.CheckAccess())
@@ -239,12 +235,13 @@ namespace MBs_Left_2
         private void ProgressBarDecrement(ProgressBar progressBar)
         {
             Dispatcher.Invoke(delegate
-            {
-                if (progressBar.Value != 0)
+                {
+                    const double epsilon = 0;
+                    if (Math.Abs(progressBar.Value - 0) > epsilon)
                 {
                     progressBar.Value--;
                 }
-            });
+                });
         }
 
         private void ChargeProgressBar(ProgressBar progressBar)
@@ -342,7 +339,7 @@ namespace MBs_Left_2
 
             if (inetConectionEnabled)
             {
-                TrafficStatictic trafficStatictic = await userTrafficStatistic.GetPageContentAsync();
+                TrafficStatictic trafficStatictic = await _userTrafficStatistic.GetPageContentAsync();
 
                 Dispatcher.Invoke(delegate { Label_TrafficLeft.Content = trafficStatictic.TrafficLeft; });
                 Dispatcher.Invoke(delegate { Label_TotalTraffic.Content = trafficStatictic.TotalTraffic; });
@@ -393,7 +390,7 @@ namespace MBs_Left_2
             DragMove();
         }
 
-        private void MainWindowForm_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        private void MainWindowForm_Closing(object sender, CancelEventArgs e)
         {
             SaveSettings();
         }
