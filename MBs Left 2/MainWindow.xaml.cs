@@ -38,6 +38,9 @@ namespace MBs_Left_2
             InitializeContextMenuBehavior();
             InitializeProgressBarBehavior(ProgressBar);
 
+            ProccessFirsStart();
+
+
             Properties.Settings.Default.PropertyChanged += delegate(object sender, PropertyChangedEventArgs args)
                 {
                     if (args.PropertyName == "UserPhoneNamber")
@@ -45,6 +48,14 @@ namespace MBs_Left_2
                         _userTrafficStatistic.SetUserData(Properties.Settings.Default.UserPhoneNamber, Properties.Settings.Default.UserPass);
                     }
                 };
+        }
+
+        private void ProccessFirsStart()
+        {
+            if (Properties.Settings.Default.UserPhoneNamber.Length == 0)
+            {
+                ShowWindowToUserDataInput();
+            }
         }
 
         private void SetWindowPosition()
@@ -115,10 +126,7 @@ namespace MBs_Left_2
 
             MenuItem_SetUserData.Click += delegate
                 {
-                    WindowToUserDataInput windowToUserDataInput = new WindowToUserDataInput();
-                    windowToUserDataInput.Top = this.Top - (windowToUserDataInput.Height - this.Height) / 2;
-                    windowToUserDataInput.Left = this.Left - (windowToUserDataInput.Width - this.Width)/2;
-                    windowToUserDataInput.Show();
+                    ShowWindowToUserDataInput();
                 };
             /*
             //Language
@@ -382,6 +390,14 @@ namespace MBs_Left_2
             }
 
             return "Debug";
+        }
+
+        private void ShowWindowToUserDataInput()
+        {
+            WindowToUserDataInput windowToUserDataInput = new WindowToUserDataInput();
+            windowToUserDataInput.Top = this.Top - (windowToUserDataInput.Height - this.Height) / 2;
+            windowToUserDataInput.Left = this.Left - (windowToUserDataInput.Width - this.Width) / 2;
+            windowToUserDataInput.Show();
         }
 
         //DragMove
