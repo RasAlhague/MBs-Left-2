@@ -3,10 +3,10 @@
   <Profiles />
   <Settings>
     <Setting Name="UserPhoneNamber" Type="System.String" Scope="User">
-      <Value Profile="(Default)">449928044</Value>
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="UserPass" Type="System.String" Scope="User">
-      <Value Profile="(Default)">y134679258</Value>
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="AutoUpdateInterval" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">30</Value>

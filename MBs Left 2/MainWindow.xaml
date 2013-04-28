@@ -41,14 +41,14 @@
         </ContextMenu>
     </Window.ContextMenu>
     <Grid>
-        <Label Content="T" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1,10,0,0" FontFamily="Microsoft Sans Serif" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Padding="0" FontSize="14"/>
-        <Label x:Name="Label_TotalTraffic" Content="0000" HorizontalAlignment="Left" Margin="13,10,0,0" VerticalAlignment="Top" FontFamily="Microsoft Sans Serif" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Padding="0" FontSize="14"/>
-        <Label Content="C" HorizontalAlignment="Left" Margin="51,10,0,0" VerticalAlignment="Top" FontFamily="Microsoft Sans Serif" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Padding="0" FontSize="14"/>
-        <Label x:Name="Label_CurrentSession" Content="0000" HorizontalAlignment="Left" Margin="65,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" FontFamily="Microsoft Sans Serif" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Padding="0" FontSize="14"/>
-        <Label x:Name="Label_TrafficLeft" Content="0000" HorizontalAlignment="Left" Margin="4,27,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" FontFamily="Microsoft Sans Serif" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Padding="0"/>
-        <Label Content="S" HorizontalAlignment="Left" Margin="52,29,0,0" VerticalAlignment="Top" FontFamily="Microsoft Sans Serif" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Padding="0" FontSize="14"/>
-        <Label x:Name="Label_Saldo" Content="0000" HorizontalAlignment="Left" Margin="65,29,0,0" VerticalAlignment="Top" Grid.RowSpan="1" FontFamily="Microsoft Sans Serif" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Padding="0" FontSize="14"/>
-        <ProgressBar x:Name="ProgressBar" Height="7" VerticalAlignment="Top" HorizontalAlignment="Left" Width="95"/>
+        <Label Content="{x:Static Properties:Resources.T}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1,10,0,0" FontFamily="Microsoft Sans Serif" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Padding="0" FontSize="14" ToolTip="{x:Static Properties:Resources.TotalTraffic}"/>
+        <Label x:Name="Label_TotalTraffic" Content="0000" HorizontalAlignment="Left" Margin="13,10,0,0" VerticalAlignment="Top" FontFamily="Microsoft Sans Serif" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Padding="0" FontSize="14" ToolTip="{x:Static Properties:Resources.TotalTraffic}"/>
+        <Label Content="{x:Static Properties:Resources.C}" HorizontalAlignment="Left" Margin="51,10,0,0" VerticalAlignment="Top" FontFamily="Microsoft Sans Serif" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Padding="0" FontSize="14" ToolTip="{x:Static Properties:Resources.CurrentSession}"/>
+        <Label x:Name="Label_CurrentSession" Content="0000" HorizontalAlignment="Left" Margin="65,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" FontFamily="Microsoft Sans Serif" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Padding="0" FontSize="14" ToolTip="{x:Static Properties:Resources.CurrentSession}"/>
+        <Label x:Name="Label_TrafficLeft" Content="0000" HorizontalAlignment="Left" Margin="4,27,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" FontFamily="Microsoft Sans Serif" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Padding="0" ToolTip="{x:Static Properties:Resources.TrafficLeft}"/>
+        <Label Content="{x:Static Properties:Resources.S}" HorizontalAlignment="Left" Margin="52,29,0,0" VerticalAlignment="Top" FontFamily="Microsoft Sans Serif" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Padding="0" FontSize="14" ToolTip="{x:Static Properties:Resources.Saldo}"/>
+        <Label x:Name="Label_Saldo" Content="0000" HorizontalAlignment="Left" Margin="65,29,0,0" VerticalAlignment="Top" Grid.RowSpan="1" FontFamily="Microsoft Sans Serif" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Padding="0" FontSize="14" ToolTip="{x:Static Properties:Resources.Saldo}"/>
+        <ProgressBar x:Name="ProgressBar" Height="7" VerticalAlignment="Top" HorizontalAlignment="Left" Width="95" />
 
     </Grid>
 </Window>

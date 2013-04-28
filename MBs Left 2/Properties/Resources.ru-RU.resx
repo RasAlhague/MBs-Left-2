@@ -117,8 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="C" xml:space="preserve">
+    <value>Т</value>
+  </data>
   <data name="CheckInternetConnectionMessage" xml:space="preserve">
     <value>Проверте подключение к Интернет</value>
+  </data>
+  <data name="CurrentSession" xml:space="preserve">
+    <value>Текущая сессия</value>
   </data>
   <data name="IncorrectPhoneMessage" xml:space="preserve">
     <value>Не корректный номер телефона! Используйте следующий формат: yyххххххх, где yy - код города или мобильный код 94 (например, 487430123, 941234567, 449991234).</value>
@@ -144,8 +150,23 @@
   <data name="MenuItem_TopMost" xml:space="preserve">
     <value>Поверх других приложений</value>
   </data>
+  <data name="S" xml:space="preserve">
+    <value>С</value>
+  </data>
+  <data name="Saldo" xml:space="preserve">
+    <value>Сальдо</value>
+  </data>
   <data name="Settings" xml:space="preserve">
     <value>Настройки</value>
+  </data>
+  <data name="T" xml:space="preserve">
+    <value>В</value>
+  </data>
+  <data name="TotalTraffic" xml:space="preserve">
+    <value>Всего трафика</value>
+  </data>
+  <data name="TrafficLeft" xml:space="preserve">
+    <value>Трафика осталось</value>
   </data>
   <data name="WrongUserDataMessage" xml:space="preserve">
     <value>Неправильный номер телефона или пароль!</value>

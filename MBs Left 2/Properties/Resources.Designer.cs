@@ -61,11 +61,29 @@ namespace MBs_Left_2.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to C.
+        /// </summary>
+        public static string C {
+            get {
+                return ResourceManager.GetString("C", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Check you Internet connection!.
         /// </summary>
         public static string CheckInternetConnectionMessage {
             get {
                 return ResourceManager.GetString("CheckInternetConnectionMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Current session.
+        /// </summary>
+        public static string CurrentSession {
+            get {
+                return ResourceManager.GetString("CurrentSession", resourceCulture);
             }
         }
         
@@ -142,11 +160,56 @@ namespace MBs_Left_2.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to S.
+        /// </summary>
+        public static string S {
+            get {
+                return ResourceManager.GetString("S", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Saldo.
+        /// </summary>
+        public static string Saldo {
+            get {
+                return ResourceManager.GetString("Saldo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Settings.
         /// </summary>
         public static string Settings {
             get {
                 return ResourceManager.GetString("Settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to T.
+        /// </summary>
+        public static string T {
+            get {
+                return ResourceManager.GetString("T", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total traffic.
+        /// </summary>
+        public static string TotalTraffic {
+            get {
+                return ResourceManager.GetString("TotalTraffic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Traffic left.
+        /// </summary>
+        public static string TrafficLeft {
+            get {
+                return ResourceManager.GetString("TrafficLeft", resourceCulture);
             }
         }
         

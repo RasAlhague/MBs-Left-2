@@ -25,7 +25,7 @@ namespace MBs_Left_2.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("449928044")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string UserPhoneNamber {
             get {
                 return ((string)(this["UserPhoneNamber"]));
@@ -37,7 +37,7 @@ namespace MBs_Left_2.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("y134679258")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string UserPass {
             get {
                 return ((string)(this["UserPass"]));
