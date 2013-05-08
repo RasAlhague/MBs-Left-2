@@ -36,7 +36,7 @@ namespace MBs_Left_2
             InitializeContextMenuBehavior();
             InitializeProgressBarBehavior(ProgressBar);
 
-            ProccessFirsStart();
+            ApplicationFirsStart();
 
 
             Properties.Settings.Default.PropertyChanged += delegate(object sender, PropertyChangedEventArgs args)
@@ -48,7 +48,7 @@ namespace MBs_Left_2
                 };
         }
 
-        private void ProccessFirsStart()
+        private void ApplicationFirsStart()
         {
             if (Properties.Settings.Default.UserPhoneNamber.Length == 0)
             {
@@ -238,50 +238,54 @@ namespace MBs_Left_2
             };
         }
 
-        private void ProgressBarDecrement(ProgressBar progressBar)
-        {
-            Dispatcher.Invoke(delegate
+        #region ProgressBar Funcrions
+
+            private void ProgressBarDecrement(ProgressBar progressBar)
+            {
+                Dispatcher.Invoke(delegate
+                    {
+                        const double epsilon = 0;
+                        if (Math.Abs(progressBar.Value - 0) > epsilon)
+                    {
+                        progressBar.Value--;
+                    }
+                    });
+            }
+
+            private void ChargeProgressBar(ProgressBar progressBar)
+            {
+                Dispatcher.Invoke(delegate
                 {
-                    const double epsilon = 0;
-                    if (Math.Abs(progressBar.Value - 0) > epsilon)
-                {
-                    progressBar.Value--;
-                }
+                    progressBar.Value = progressBar.Maximum;
                 });
-        }
+            }
 
-        private void ChargeProgressBar(ProgressBar progressBar)
-        {
-            Dispatcher.Invoke(delegate
+            private void SetProgressBarStyleToMarquee(ProgressBar progressBar)
             {
-                progressBar.Value = progressBar.Maximum;
-            });
-        }
+                Dispatcher.Invoke(delegate
+                {
+                    progressBar.IsIndeterminate = true;
+                });
+            }
 
-        private void SetProgressBarStyleToMarquee(ProgressBar progressBar)
-        {
-            Dispatcher.Invoke(delegate
+            private void SetProgressBarStyleToBlock(ProgressBar progressBar)
             {
-                progressBar.IsIndeterminate = true;
-            });
-        }
+                Dispatcher.Invoke(delegate
+                {
+                    progressBar.IsIndeterminate = false;
+                    progressBar.Value = progressBar.Maximum;
+                });
+            }
 
-        private void SetProgressBarStyleToBlock(ProgressBar progressBar)
-        {
-            Dispatcher.Invoke(delegate
-            {
-                progressBar.IsIndeterminate = false;
-                progressBar.Value = progressBar.Maximum;
-            });
-        }
-
-        private void SetProgressBarMaximum(ProgressBar progressBar, int maximum)
+            private void SetProgressBarMaximum(ProgressBar progressBar, int maximum)
         {
             Dispatcher.Invoke(delegate
             {
                 progressBar.Maximum = maximum;
             });
         }
+
+        #endregion
 
 
         private void ClearLabels()

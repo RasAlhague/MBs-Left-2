@@ -3,8 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:Properties="clr-namespace:MBs_Left_2.Properties"
         xmlns:tb="clr-namespace:Hardcodet.Wpf.TaskbarNotification;assembly=Hardcodet.Wpf.TaskbarNotification"
-        x:Name="MainWindowForm" x:Class="MBs_Left_2.MainWindow"
-        Title="MainWindow" Height="56" Width="119" AllowsTransparency="True" WindowStyle="None" SizeToContent="WidthAndHeight" MouseLeftButtonDown="Window_MouseLeftButtonDown" Closing="MainWindowForm_Closing" Opacity="{Binding Opacity}" Topmost="{Binding TopMost}">
+        x:Name="MainWindowForm" x:Class="MBs_Left_2.MainWindow" Height="56" Width="119" AllowsTransparency="True" WindowStyle="None" SizeToContent="WidthAndHeight" MouseLeftButtonDown="Window_MouseLeftButtonDown" Closing="MainWindowForm_Closing" Opacity="{Binding Opacity}" Topmost="{Binding TopMost}" Title="{Binding Content, ElementName=Label_TrafficLeft}">
 
     <Window.DataContext>
         <Properties:Settings/>
