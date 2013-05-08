@@ -3,8 +3,6 @@ using System.ComponentModel;
 using System.Deployment.Application;
 using System.Globalization;
 using System.IO;
-using System.Net;
-using System.Net.NetworkInformation;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Runtime.InteropServices;
@@ -364,22 +362,6 @@ namespace MBs_Left_2
             //Label_TotalTraffic.Content = trafficStatictic.TotalTraffic;
             //Label_CurrentSession.Content = trafficStatictic.CurrentSession;
             //Label_Saldo.Content = trafficStatictic.Saldo;
-        }
-
-        private bool CheckInetConection()
-        {
-            Ping ping = new Ping();
-            IPAddress ipAddress = IPAddress.Parse("8.8.8.8");
-            PingReply pingReply = ping.Send(ipAddress, 800);
-            if (pingReply != null)
-            {
-                IPStatus ipStatus = pingReply.Status;
-                if (ipStatus != IPStatus.Success)
-                {
-                    return false;
-                }
-            }
-            return true;
         }
 
         private static string GetVersion()
