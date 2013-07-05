@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CsQuery;
+using System;
 using System.ComponentModel;
 using System.Deployment.Application;
 using System.Globalization;
@@ -238,7 +239,7 @@ namespace MBs_Left_2
             };
         }
 
-        #region ProgressBar Funcrions
+        #region ProgressBar Functions
 
             private void ProgressBarDecrement(ProgressBar progressBar)
             {
@@ -451,6 +452,10 @@ namespace MBs_Left_2
         private string _postData;
         private const string URLLogin = "https://assa.intertelecom.ua/ru/login/";
 
+        private string regexTotalTraffic = @"(?<AllT>\d*)\.?\d* по \d\d";
+        private string regexCurrentSession = @"<strong>.*?(?<currSessionT>\d{1,4})\..*</strong>+?";
+        private string regexSaldo = @"<td>Сальдо</td>.*(?<Saldo>\d{1,2}.\d{1,2}).*месяц";
+
         private TrafficStatictic _trafficStatictic;
 
         //CONSTRUCTOR
@@ -508,8 +513,8 @@ namespace MBs_Left_2
 
         void ParseStringAndSetTrafficStats(string stringToParse)
         {
-            // нахожу на странице поле трафика текущей сессии и достаю значение через группу
-            Match parsMatchTotalTraffic = Regex.Match(stringToParse, @"(?<AllT>\d*)\.?\d* по \d\d");
+            // нахожу на странице поле общего трафика и достаю значение через группу
+            Match parsMatchTotalTraffic = Regex.Match(stringToParse, regexTotalTraffic);
             if (!parsMatchTotalTraffic.Success)
             {
                 MessageBox.Show("DEBUG.\n\nCan not find TotalTraffic");
@@ -520,14 +525,14 @@ namespace MBs_Left_2
             }
 
             // нахожу на странице поле трафика текущей сессии и достаю значение через группу
-            Match parsMatchCurrentSession = Regex.Match(stringToParse, @"<td>Трафик МБ</td>.*?(?<currSessionT>\d{1,4})<+?");
-            if (!parsMatchCurrentSession.Success)
+            Match parsMatchCurrentSession = Regex.Match(stringToParse, regexCurrentSession); //<td>Трафик МБ</td>.*?<strong>.*(?<currSessionT>\d{1,4})</strong>+?
+            if (!parsMatchCurrentSession.Success)                                           //<strong>.*?(?<currSessionT>\d{1,4})\..*</strong>+?
             {
                 MessageBox.Show("DEBUG.\n\nCan not find CurrentSession");
             }
 
             //нахожу на странице поле сальдо и достаю значение через группу
-            Match parsMatchSaldo = Regex.Match(stringToParse, @"<td>Сальдо</td>.*(?<Saldo>\d{1,2}.\d{1,2}).*месяц");
+            Match parsMatchSaldo = Regex.Match(stringToParse, regexSaldo);
             if (!parsMatchSaldo.Success)
             {
                 MessageBox.Show("DEBUG.\n\nCan not find Saldo");
